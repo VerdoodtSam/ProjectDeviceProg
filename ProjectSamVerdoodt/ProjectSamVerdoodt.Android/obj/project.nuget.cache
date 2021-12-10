@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "G54CcM8IwG0hmyeCbLsHyKOK4iAsRfk2yemSV+nGC+ZPWzwOdv6VX/sHPIHuf7eLSH+WcANX7KbUweat3V6F/w==",
+  "dgSpecHash": "8E7DtIVC4vdrEvY2yIaSy5yGc0a8FENEURGBM9HZ6W3jqS5uvPHqbKoJngezl/vxlI1P+64mJeBbN9Shtc0paQ==",
   "success": true,
   "projectFilePath": "C:\\DP\\project\\ProjectSamVerdoodt\\ProjectSamVerdoodt.Android\\ProjectSamVerdoodt.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sonic\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Sonic\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.annotation\\1.1.0.8\\xamarin.androidx.annotation.1.1.0.8.nupkg.sha512",
