@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace ProjectSamVerdoodt
 {
@@ -17,13 +18,23 @@ namespace ProjectSamVerdoodt
         {
             InitializeComponent();
 
-            TestRepository();
+
+            LoadCard();
+        }
+        private async void LoadCard()
+        {
+
+            MPOneCard.ItemsSource = await APIRepo.GetRandomCardAsync();
         }
 
         private async Task TestRepository()
         {
-            YuGiOhCard card = await APIRepo.GetRandomCardAsync();
-            Debug.Write($"Id card: {card.CardId}");
+            List<YuGiOhCard> cards = await APIRepo.GetRandomCardAsync();
+            foreach(YuGiOhCard c in cards)
+            {
+                Debug.WriteLine(c.CardName);
+            }
+            
         }
     }
 }

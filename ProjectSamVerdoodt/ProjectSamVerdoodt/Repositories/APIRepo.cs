@@ -13,32 +13,41 @@ namespace ProjectSamVerdoodt.Repositories
 
         private const string _BASEURI = "https://db.ygoprodeck.com";
   
-        private static HttpClient GetClient()
+        private static async Task<HttpClient> GetClient()
         {
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/json");
             return client;
         }
-        public static async Task<YuGiOhCard> GetRandomCardAsync()
+
+        public  async static Task<List<YuGiOhCard>> GetRandomCardAsync()
         {
-            string url = _BASEURI + "/api/v7/randomcard.php";
-
-            using(HttpClient client = GetClient())
+            try
             {
-                try
+
+                using (HttpClient client = await GetClient())
                 {
+                    string url = _BASEURI + "/api/v7/randomcard.php";
                     string json = await client.GetStringAsync(url);
-
-                    YuGiOhCard card = JsonConvert.DeserializeObject<YuGiOhCard>(json);
-                    return card;
-                }
-                catch (Exception ex)
-                {
-
-                    throw ex;
+                    if (json != null)
+                    {
+                        YuGiOhCard card = JsonConvert.DeserializeObject<YuGiOhCard>(json);
+                        List<YuGiOhCard> cards = new List<YuGiOhCard>();
+                        cards.Add(card);
+                        return cards;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
-
     }
+
 }
+
