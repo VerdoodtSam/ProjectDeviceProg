@@ -18,5 +18,14 @@ namespace ProjectSamVerdoodt.Models
 
         [JsonProperty(PropertyName ="desc")]
         public string CardDesc { get; set; }
+
+
+        public string CardImg { get { return CalculateImg(); } }
+
+        private string CalculateImg()
+        {
+            String source = "https://storage.googleapis.com/ygoprodeck.com/pics/" + this.CardId + ".jpg";
+            return source;
+        }
     }
 }

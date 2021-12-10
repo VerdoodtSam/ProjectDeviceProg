@@ -6,8 +6,15 @@
             ItemsSource="{Binding Cards}">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding CardName}" />
+                <ViewCell>
+                    <Grid>
+                        <Image  Source="{Binding CardImg}"/>
+                        <Label Text="{Binding CardName}" />
+                    </Grid>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
+        
     </ListView>
 </ContentPage>
+
