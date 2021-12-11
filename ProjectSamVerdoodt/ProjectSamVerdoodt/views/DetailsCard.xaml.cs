@@ -39,5 +39,10 @@ namespace ProjectSamVerdoodt.views
                 DPAttribute.Text = "Attribute: " + c.CardAttri;
 ;            }
         }
+        private void BtnReturn_Clicked(object sender, EventArgs e)
+        {
+
+            Navigation.PushAsync(new MainPage());
+        }
     }
 }

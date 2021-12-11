@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ProjectSamVerdoodt.Models
 {
+    
     public class YuGiOhCard
     {
         [JsonProperty(PropertyName = "id")]
@@ -36,7 +37,7 @@ namespace ProjectSamVerdoodt.Models
 
         public string CardImg { get { return CalculateImg(); } }
 
-
+        
         private string CalculateImg()
         {
             String source = "https://storage.googleapis.com/ygoprodeck.com/pics/" + this.CardId + ".jpg";

@@ -5,14 +5,20 @@
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout BackgroundColor="DarkRed">
-        <Label Text="Welcome to the YuGiOh CardViewer" FontSize="20" TextDecorations="Underline" HorizontalOptions="Center" TextColor="White" Margin="20,30,20,40"/>
-        <Grid Margin="20,0,20,0">
+            <Label Text="Welcome to the YuGiOh CardViewer" FontSize="20"  HorizontalOptions="Center" TextColor="White" Margin="20,30,20,10"/>
+            <Label Text="Main page" FontSize="20" TextDecorations="Underline" HorizontalOptions="Center" TextColor="White" Margin="20,0,20,40"/>
+            <Grid Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Entry Placeholder="Look for a card:" Grid.Column="0"/>
-            <Button Text="Search" IsEnabled="False" Grid.Column="1"/>
+            <Entry x:Name="SearchName" Placeholder="Look for a card:" Grid.Column="0" Grid.Row="0" ClearButtonVisibility="WhileEditing" TextChanged="Search_Typed"/>
+            <Button x:Name="BtnSearch"  Text="Search" IsEnabled="False" Grid.Column="1" Grid.Row="0" Clicked="BtnSearch_Clicked" />
+            <Label x:Name="SearchFailed" Text="The card you were looking for could not be found" TextColor="Black" Grid.Column="0" Grid.Row="1" IsVisible="False"/>
         </Grid>
         <Grid Padding="0,30,0,30">
             <Grid.RowDefinitions>
@@ -26,6 +32,7 @@
         <Grid>
             <Button x:Name="BtnDetails" Text="Details" Grid.Column="0" HorizontalOptions="Center" Clicked="BtnDetails_Clicked"/>
             <Button x:Name="BtnRandom"  Text="Random" Grid.Column="1" HorizontalOptions="Center" Clicked="BtnRando_Clicked"/>
+            <Button x:Name="BtnAddDeck" Text="Add to deck" Grid.Column="2" HorizontalOptions="Center" Clicked="BtnAddDeck_Clicked"/>
         </Grid>
     </StackLayout>
 </ContentPage>

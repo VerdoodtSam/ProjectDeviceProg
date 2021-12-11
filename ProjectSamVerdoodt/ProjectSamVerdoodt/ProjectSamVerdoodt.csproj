@@ -31,12 +31,18 @@
     <EmbeddedResource Update="views\DetailsCard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\RandomCard.xaml">
+    <EmbeddedResource Update="views\DeckPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\Yu-Gi-Oh-Fandom.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="views\DeckPage.xaml.cs">
+      <DependentUpon>DeckPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

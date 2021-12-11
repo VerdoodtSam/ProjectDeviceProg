@@ -5,6 +5,7 @@ using System.Net.Http;
 using ProjectSamVerdoodt.Models;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace ProjectSamVerdoodt.Repositories
 {
@@ -26,18 +27,36 @@ namespace ProjectSamVerdoodt.Repositories
                 using (HttpClient client = await GetClient())
                 {
                     string url = _BASEURI + "/api/v7/cardinfo.php?name=" + name;
-                    string json = await client.GetStringAsync(url);
-                    if(json != null)
+                    try {
+                        string json = await client.GetStringAsync(url);
+                        if (json != null)
+                        {
+                            if (json.Substring(0, 11).Contains("error"))
+                            {
+                                return null;
+                            }
+                            else
+                            {
+                                json = json.Replace(json.Substring(0, 11), json.Substring(0, 2));
+                                json = json.Remove(json.Length - 3, 2);
+
+                                List<YuGiOhCard> cards = new List<YuGiOhCard>();
+                                YuGiOhCard card = JsonConvert.DeserializeObject<YuGiOhCard>(json);
+                                cards.Add(card);
+                                return cards;
+                            }
+
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }catch(Exception ex)
                     {
-                        YuGiOhCard card = JsonConvert.DeserializeObject<YuGiOhCard>(json);
                         List<YuGiOhCard> cards = new List<YuGiOhCard>();
-                        cards.Add(card);
+                        cards.Add(null);
                         return cards;
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                    }     
                 }
             }
             catch (Exception ex)

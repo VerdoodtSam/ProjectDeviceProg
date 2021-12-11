@@ -35,7 +35,36 @@ namespace ProjectSamVerdoodt
             }
         }
 
-   
+        private async Task LoadCard(string name)
+        {
+            List<YuGiOhCard> cards = await APIRepo.GetCardInfo(name);
+            foreach (YuGiOhCard c in cards)
+            {
+                if(c is null)
+                {
+                    SearchFailed.IsVisible = true;
+                }
+                else
+                {
+                    MPImg.Source = c.CardImg;
+                    MPName.Text = c.CardName;
+                    CurrentCardName = c.CardName;
+                }
+                
+            }
+        }
+
+        private void Search_Typed(object sender, EventArgs e)
+        {
+            BtnSearch.IsEnabled = true;
+            SearchFailed.IsVisible = false;
+        }
+
+        private void BtnSearch_Clicked(object sender, EventArgs e)
+        {
+            string CardName = SearchName.Text;
+            LoadCard(CardName);
+        }
 
         private void BtnRando_Clicked(object sender, EventArgs e)
         {
@@ -46,6 +75,9 @@ namespace ProjectSamVerdoodt
         
             Navigation.PushAsync(new DetailsCard(CurrentCardName));
         }
+
+        
+
 
         private async Task TestRepository()
         {
