@@ -19,8 +19,23 @@ namespace ProjectSamVerdoodt.Models
         [JsonProperty(PropertyName ="desc")]
         public string CardDesc { get; set; }
 
+        [JsonProperty(PropertyName ="atk")]
+        public int CardAtk { get; set; }
+
+        [JsonProperty(PropertyName ="def")]
+        public int CardDef { get; set; }
+
+        [JsonProperty(PropertyName ="level")]
+        public int CardLevel { get; set; }
+
+        [JsonProperty(PropertyName ="race")]
+        public string CardRace { get; set; }
+
+        [JsonProperty(PropertyName ="attribute")]
+        public string CardAttri { get; set; }
 
         public string CardImg { get { return CalculateImg(); } }
+
 
         private string CalculateImg()
         {

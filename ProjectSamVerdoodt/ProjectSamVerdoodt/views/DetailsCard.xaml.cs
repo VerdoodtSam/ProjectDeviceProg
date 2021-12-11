@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectSamVerdoodt.Models;
+using ProjectSamVerdoodt.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,30 @@ namespace ProjectSamVerdoodt.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailsCard : ContentPage
     {
-        public DetailsCard()
+        public string CurrentCard { get; set; }
+        public DetailsCard(string CurrentCardName)
         {
             InitializeComponent();
+
+            CurrentCard = CurrentCardName;
+            LoadInfoCard(CurrentCard);
+        }
+        private async Task LoadInfoCard(string name)
+        {
+            List<YuGiOhCard> cardInfo = await APIRepo.GetCardInfo(name);
+            foreach (YuGiOhCard c in cardInfo)
+            {
+                DPImg.Source = c.CardImg;
+                DPName.Text = "Name: " + c.CardName;
+                DPLevel.Text = "Level: " + c.CardLevel;
+                DPType.Text = "Type: " + c.CardType;
+                DPId.Text = "Id: " + c.CardId;
+                DPDesc.Text = c.CardDesc;
+                DPAtk.Text = "Atk: " + c.CardAtk;
+                DPDeff.Text = "Deff: " + c.CardDef;
+                DPRace.Text = "Race: " + c.CardRace;
+                DPAttribute.Text = "Attribute: " + c.CardAttri;
+;            }
         }
     }
 }

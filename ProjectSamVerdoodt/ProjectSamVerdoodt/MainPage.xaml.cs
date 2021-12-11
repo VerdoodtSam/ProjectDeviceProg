@@ -9,22 +9,42 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Newtonsoft.Json;
+using ProjectSamVerdoodt.views;
 
 namespace ProjectSamVerdoodt
 {
     public partial class MainPage : ContentPage
     {
+        public string CurrentCardName { get; set; }
         public MainPage()
         {
             InitializeComponent();
 
 
-            LoadCard();
+            LoadRandoCard();
         }
-        private async void LoadCard()
+        private async Task LoadRandoCard()
         {
 
-            MPOneCard.ItemsSource = await APIRepo.GetRandomCardAsync();
+            List<YuGiOhCard> cards = await APIRepo.GetRandomCardAsync();
+            foreach (YuGiOhCard c in cards)
+            {
+                MPImg.Source = c.CardImg;
+                MPName.Text = c.CardName;
+                CurrentCardName = c.CardName;
+            }
+        }
+
+   
+
+        private void BtnRando_Clicked(object sender, EventArgs e)
+        {
+            LoadRandoCard();
+        }
+
+        private void BtnDetails_Clicked(object sender, EventArgs e) { 
+        
+            Navigation.PushAsync(new DetailsCard(CurrentCardName));
         }
 
         private async Task TestRepository()
