@@ -11,10 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\back_high.jpg" />
     <None Remove="Assets\Yu-Gi-Oh-Fandom.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\back_high.jpg" />
     <EmbeddedResource Include="Assets\Yu-Gi-Oh-Fandom.jpg" />
   </ItemGroup>
 
@@ -25,13 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="views\ChangeCards.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="views\DetailsCard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\DeckPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\PackPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

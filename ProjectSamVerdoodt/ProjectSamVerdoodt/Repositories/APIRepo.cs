@@ -92,6 +92,34 @@ namespace ProjectSamVerdoodt.Repositories
                 throw ex;
             }
         }
+
+        public async static Task<List<YuGiOhSet>> GetYuGiOhSetsAsync()
+        {
+            try
+            {
+
+                using (HttpClient client = await GetClient())
+                {
+                    string url = _BASEURI + "/api/v7/cardsets.php";
+                    string json = await client.GetStringAsync(url);
+                    if (json != null)
+                    {
+                        YuGiOhSet set = JsonConvert.DeserializeObject<YuGiOhSet>(json);
+                        List<YuGiOhSet> sets = new List<YuGiOhSet>();
+                        sets.Add(set);
+                        return sets;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }

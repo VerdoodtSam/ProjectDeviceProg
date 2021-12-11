@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("ProjectSamVerdoodt.views.DeckPage.xaml", "views/DeckPage.xaml", typeof(global::ProjectSamVerdoodt.views.RandomCard))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("ProjectSamVerdoodt.views.DeckPage.xaml", "views/DeckPage.xaml", typeof(global::ProjectSamVerdoodt.views.DeckPage))]
 
 namespace ProjectSamVerdoodt.views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("views\\DeckPage.xaml")]
-    public partial class RandomCard : global::Xamarin.Forms.ContentPage {
+    public partial class DeckPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RandomCard));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(DeckPage));
         }
     }
 }

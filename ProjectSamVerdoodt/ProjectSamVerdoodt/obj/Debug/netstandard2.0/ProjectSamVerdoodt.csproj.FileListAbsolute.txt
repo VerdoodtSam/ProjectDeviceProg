@@ -6,9 +6,7 @@ C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\Pro
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\ProjectSamVerdoodt.GeneratedMSBuildEditorConfig.editorconfig
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
-C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\views\ChangeCards.xaml.g.cs
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\views\DetailsCard.xaml.g.cs
-C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\views\RandomCard.xaml.g.cs
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\ProjectSamVerdoodt.AssemblyInfoInputs.cache
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\ProjectSamVerdoodt.AssemblyInfo.cs
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\ProjectSamVerdoodt.csproj.CoreCompileInputs.cache
@@ -16,3 +14,5 @@ C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\Xam
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\ProjectSamVerdoodt.dll
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\ref\ProjectSamVerdoodt.dll
 C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\ProjectSamVerdoodt.pdb
+C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\views\DeckPage.xaml.g.cs
+C:\DP\project\ProjectSamVerdoodt\ProjectSamVerdoodt\obj\Debug\netstandard2.0\views\PackPage.xaml.g.cs

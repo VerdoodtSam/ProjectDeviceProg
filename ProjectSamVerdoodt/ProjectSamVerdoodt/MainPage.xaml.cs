@@ -76,9 +76,16 @@ namespace ProjectSamVerdoodt
             Navigation.PushAsync(new DetailsCard(CurrentCardName));
         }
 
+        private void BtnAddDeck_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DeckPage());
+        }
+
+        private void BtnPack_Clicked(object sender,EventArgs e)
+        {
+            Navigation.PushAsync(new PackPage());
+        }
         
-
-
         private async Task TestRepository()
         {
             List<YuGiOhCard> cards = await APIRepo.GetRandomCardAsync();

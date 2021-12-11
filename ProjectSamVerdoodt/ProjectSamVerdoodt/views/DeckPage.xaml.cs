@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ProjectSamVerdoodt.views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RandomCard : ContentPage
+    public partial class DeckPage : ContentPage
     {
-        public RandomCard()
+        public DeckPage()
         {
             InitializeComponent();
         }

@@ -35,6 +35,9 @@ namespace ProjectSamVerdoodt.Models
         [JsonProperty(PropertyName ="attribute")]
         public string CardAttri { get; set; }
 
+        [JsonProperty(PropertyName ="card_sets")]
+        public List<YuGiOhSet> CardSet { get; set; }
+
         public string CardImg { get { return CalculateImg(); } }
 
         

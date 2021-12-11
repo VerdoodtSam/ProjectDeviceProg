@@ -29,11 +29,12 @@
             <Label x:Name="MPName" Text="(card not loaded yet)" TextColor="White"  Grid.Row="0" HorizontalOptions="Center"/>
             <Image x:Name="MPImg" Aspect="AspectFit" Source="https://storage.googleapis.com/ygoprodeck.com/pics/27551.jpg"  Grid.Row="2" />
         </Grid>
-        <Grid>
+        <Grid Margin="20,0,20,20">
             <Button x:Name="BtnDetails" Text="Details" Grid.Column="0" HorizontalOptions="Center" Clicked="BtnDetails_Clicked"/>
             <Button x:Name="BtnRandom"  Text="Random" Grid.Column="1" HorizontalOptions="Center" Clicked="BtnRando_Clicked"/>
             <Button x:Name="BtnAddDeck" Text="Add to deck" Grid.Column="2" HorizontalOptions="Center" Clicked="BtnAddDeck_Clicked"/>
         </Grid>
+        <Button x:Name="BtnPack" Text="Pack opener" HorizontalOptions="Center" Clicked="BtnPack_Clicked"/>
     </StackLayout>
 </ContentPage>
 
