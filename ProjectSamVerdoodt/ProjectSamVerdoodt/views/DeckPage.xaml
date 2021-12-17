@@ -7,9 +7,31 @@
     <StackLayout BackgroundColor="DarkRed">
         <Label Text="Welcome to the YuGiOh CardViewer" FontSize="20"  HorizontalOptions="Center" TextColor="White" Margin="20,30,20,10"/>
         <Label Text="Deck overview" FontSize="20" TextDecorations="Underline" HorizontalOptions="Center" TextColor="White" Margin="20,0,20,40"/>
+        <Label x:Name="SelectedCard" Text="Current selected card: None" FontSize="15" HorizontalOptions="Start" TextColor="White" Margin="20,0,20,20"/>
+        <Button x:Name="BtnReturn" Text="Return" Grid.Row="1" HorizontalOptions="Center" Clicked="BtnReturn_Clicked"/>
         <Grid x:Name="gridDecks">
-            <Label x:Name="deck0" Text="(deck not loaded yet)" Grid.Column="0"/>
-            <Label x:Name="deck1" Text="(deck not loaded yet)" Grid.Column="1"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label x:Name="deck0" Text="(deck not loaded yet)" Grid.Column="0" Grid.Row="0"/>
+            <Label x:Name="deck1" Text="(deck not loaded yet)" Grid.Column="1" Grid.Row="0"/>
+            <Label x:Name="deck2" Text="(deck not loaded yet)" Grid.Column="2" Grid.Row="0"/>
+
+            <Label x:Name="deck3" Text="(deck not loaded yet)" Grid.Column="0" Grid.Row="1"/>
+            <Label x:Name="deck4" Text="(deck not loaded yet)" Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="deck5" Text="(deck not loaded yet)" Grid.Column="2" Grid.Row="1"/>
+
+            <Label x:Name="deck6" Text="(deck not loaded yet)" Grid.Column="0" Grid.Row="2"/>
+            <Label x:Name="deck7" Text="(deck not loaded yet)" Grid.Column="1" Grid.Row="2"/>
+            <Label x:Name="deck8" Text="(deck not loaded yet)" Grid.Column="2" Grid.Row="2"/>
         </Grid>
     </StackLayout>
 

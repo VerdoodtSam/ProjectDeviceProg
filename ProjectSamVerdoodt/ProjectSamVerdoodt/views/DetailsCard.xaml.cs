@@ -41,7 +41,12 @@ namespace ProjectSamVerdoodt.views
         private void BtnReturn_Clicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new MainPage());
+            Navigation.PopAsync();
+        }
+
+        private void BtnAddDeck_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DeckPage(CurrentCard));
         }
     }
 }

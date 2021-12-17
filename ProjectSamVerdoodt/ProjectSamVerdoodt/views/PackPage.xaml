@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Image x:Name="ImgCard0" Source="https://ygoprodeck.com/pics/back_high.jpg" Aspect="AspectFit" Grid.Row="0" Grid.Column="0">
+            <Image x:Name="ImgCard0" Source="https://ygoprodeck.com/pics/back_high.jpg"  Aspect="AspectFit" Grid.Row="0" Grid.Column="0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Card0_Tapped" NumberOfTapsRequired="1"/>
                 </Image.GestureRecognizers>

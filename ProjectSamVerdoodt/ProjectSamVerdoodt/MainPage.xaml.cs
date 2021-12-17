@@ -75,7 +75,7 @@ namespace ProjectSamVerdoodt
 
         private void BtnAddDeck_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DeckPage());
+            Navigation.PushAsync(new DeckPage(CurrentCardName));
         }
 
         private void BtnPack_Clicked(object sender, EventArgs e)

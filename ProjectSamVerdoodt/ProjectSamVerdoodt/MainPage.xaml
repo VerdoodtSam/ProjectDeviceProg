@@ -32,7 +32,7 @@
         <Grid Margin="20,0,20,20">
             <Button x:Name="BtnDetails" Text="Details" Grid.Column="0" HorizontalOptions="Center" Clicked="BtnDetails_Clicked"/>
             <Button x:Name="BtnRandom"  Text="Random" Grid.Column="1" HorizontalOptions="Center" Clicked="BtnRando_Clicked"/>
-            <Button x:Name="BtnAddDeck" Text="Add to deck" Grid.Column="2" HorizontalOptions="Center" Clicked="BtnAddDeck_Clicked"/>
+            <Button x:Name="BtnAddDeck" Text="Deck view" Grid.Column="2" HorizontalOptions="Center" Clicked="BtnAddDeck_Clicked"/>
         </Grid>
         <Button x:Name="BtnPack" Text="Pack opener" HorizontalOptions="Center" Clicked="BtnPack_Clicked"/>
     </StackLayout>
