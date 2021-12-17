@@ -1,7 +1,6 @@
-﻿using System;
+﻿using ProjectSamVerdoodt.Models;
+using ProjectSamVerdoodt.Repositories;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -15,6 +14,28 @@ namespace ProjectSamVerdoodt.views
         public DeckPage()
         {
             InitializeComponent();
+            LoadAllDecks();
+        }
+        private async Task LoadAllDecks()
+        {
+            List<YuGiOhDeckJson> decks = await DeckAPIRepo.GetAllDeckAsync();
+            List<string> deckNames = new List<string>();
+            foreach (YuGiOhDeckJson d in decks)
+            {
+                foreach (string deck in d.DeckList)
+                {
+                    deckNames.Add(deck);
+                }
+            }
+            ShowDecks(deckNames);
+        }
+
+        private async Task ShowDecks(List<string>Decks)
+        {
+            foreach(string name in Decks)
+            {
+                gridDecks.Children.Add(new Label {Text = name}) ;
+            }
         }
     }
 }

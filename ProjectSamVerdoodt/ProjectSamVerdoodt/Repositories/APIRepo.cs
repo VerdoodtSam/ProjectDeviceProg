@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Net.Http;
+﻿using Newtonsoft.Json;
 using ProjectSamVerdoodt.Models;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System.Diagnostics;
 
 namespace ProjectSamVerdoodt.Repositories
 {
@@ -13,13 +11,16 @@ namespace ProjectSamVerdoodt.Repositories
     {
 
         private const string _BASEURI = "https://db.ygoprodeck.com";
-  
+
         private static async Task<HttpClient> GetClient()
         {
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/json");
             return client;
         }
+
+
+
         public async static Task<List<YuGiOhCard>> GetCardInfo(string name)
         {
             try
@@ -27,7 +28,8 @@ namespace ProjectSamVerdoodt.Repositories
                 using (HttpClient client = await GetClient())
                 {
                     string url = _BASEURI + "/api/v7/cardinfo.php?name=" + name;
-                    try {
+                    try
+                    {
                         string json = await client.GetStringAsync(url);
                         if (json != null)
                         {
@@ -51,12 +53,13 @@ namespace ProjectSamVerdoodt.Repositories
                         {
                             return null;
                         }
-                    }catch(Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         List<YuGiOhCard> cards = new List<YuGiOhCard>();
                         cards.Add(null);
                         return cards;
-                    }     
+                    }
                 }
             }
             catch (Exception ex)
@@ -65,7 +68,7 @@ namespace ProjectSamVerdoodt.Repositories
                 throw ex;
             }
         }
-        public  async static Task<List<YuGiOhCard>> GetRandomCardAsync()
+        public async static Task<List<YuGiOhCard>> GetRandomCardAsync()
         {
             try
             {
@@ -87,7 +90,7 @@ namespace ProjectSamVerdoodt.Repositories
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

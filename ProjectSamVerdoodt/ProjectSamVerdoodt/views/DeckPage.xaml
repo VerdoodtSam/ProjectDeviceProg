@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProjectSamVerdoodt.views.DeckPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="ProjectSamVerdoodt.views.DeckPage"
+              NavigationPage.HasNavigationBar="False">
+
+    <StackLayout BackgroundColor="DarkRed">
+        <Label Text="Welcome to the YuGiOh CardViewer" FontSize="20"  HorizontalOptions="Center" TextColor="White" Margin="20,30,20,10"/>
+        <Label Text="Deck overview" FontSize="20" TextDecorations="Underline" HorizontalOptions="Center" TextColor="White" Margin="20,0,20,40"/>
+        <Grid x:Name="gridDecks">
+            <Label x:Name="deck0" Text="(deck not loaded yet)" Grid.Column="0"/>
+            <Label x:Name="deck1" Text="(deck not loaded yet)" Grid.Column="1"/>
+        </Grid>
+    </StackLayout>
+
 </ContentPage>

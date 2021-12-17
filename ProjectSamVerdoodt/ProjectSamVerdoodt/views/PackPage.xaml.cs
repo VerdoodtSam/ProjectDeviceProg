@@ -2,8 +2,6 @@
 using ProjectSamVerdoodt.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -20,7 +18,7 @@ namespace ProjectSamVerdoodt.views
             InitializeComponent();
         }
 
-        
+
 
         private async Task<string> LoadRandoCard()
         {
@@ -49,7 +47,7 @@ namespace ProjectSamVerdoodt.views
             ImgCard3.Source = "https://ygoprodeck.com/pics/back_high.jpg";
             ImgCard4.Source = "https://ygoprodeck.com/pics/back_high.jpg";
             ImgCard5.Source = "https://ygoprodeck.com/pics/back_high.jpg";
-            
+
         }
 
         private async void Card0_Tapped(object sender, EventArgs e)

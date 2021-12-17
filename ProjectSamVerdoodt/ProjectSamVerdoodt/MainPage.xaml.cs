@@ -1,15 +1,11 @@
 ﻿using ProjectSamVerdoodt.Models;
 using ProjectSamVerdoodt.Repositories;
+using ProjectSamVerdoodt.views;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Newtonsoft.Json;
-using ProjectSamVerdoodt.views;
 
 namespace ProjectSamVerdoodt
 {
@@ -40,7 +36,7 @@ namespace ProjectSamVerdoodt
             List<YuGiOhCard> cards = await APIRepo.GetCardInfo(name);
             foreach (YuGiOhCard c in cards)
             {
-                if(c is null)
+                if (c is null)
                 {
                     SearchFailed.IsVisible = true;
                 }
@@ -50,7 +46,7 @@ namespace ProjectSamVerdoodt
                     MPName.Text = c.CardName;
                     CurrentCardName = c.CardName;
                 }
-                
+
             }
         }
 
@@ -71,8 +67,9 @@ namespace ProjectSamVerdoodt
             LoadRandoCard();
         }
 
-        private void BtnDetails_Clicked(object sender, EventArgs e) { 
-        
+        private void BtnDetails_Clicked(object sender, EventArgs e)
+        {
+
             Navigation.PushAsync(new DetailsCard(CurrentCardName));
         }
 
@@ -81,19 +78,19 @@ namespace ProjectSamVerdoodt
             Navigation.PushAsync(new DeckPage());
         }
 
-        private void BtnPack_Clicked(object sender,EventArgs e)
+        private void BtnPack_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PackPage());
         }
-        
+
         private async Task TestRepository()
         {
             List<YuGiOhCard> cards = await APIRepo.GetRandomCardAsync();
-            foreach(YuGiOhCard c in cards)
+            foreach (YuGiOhCard c in cards)
             {
                 Debug.WriteLine(c.CardName);
             }
-            
+
         }
     }
 }

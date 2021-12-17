@@ -2,8 +2,6 @@
 using ProjectSamVerdoodt.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -37,7 +35,8 @@ namespace ProjectSamVerdoodt.views
                 DPDeff.Text = "Deff: " + c.CardDef;
                 DPRace.Text = "Race: " + c.CardRace;
                 DPAttribute.Text = "Attribute: " + c.CardAttri;
-;            }
+                ;
+            }
         }
         private void BtnReturn_Clicked(object sender, EventArgs e)
         {
